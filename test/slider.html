@@ -1,0 +1,436 @@
+<!-- Reviews Carousel Slider - WordPress Ready -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<div class="reviews-section">
+  <div class="reviews-container">
+    <!-- Left Panel -->
+    <div class="reviews-left">
+      <h2 class="reviews-title">REAL STORIES<br>FROM CUSTOMERS</h2>
+      <p class="reviews-description">who rely on Fiat 2 Fiat every day for safe, fast, and transparent money transfers.</p>
+      
+      <!-- Navigation Arrows -->
+      <div class="reviews-nav">
+        <button class="nav-arrow nav-prev" onclick="changeSlide(-1)">‹</button>
+        <button class="nav-arrow nav-next" onclick="changeSlide(1)">›</button>
+      </div>
+    </div>
+
+    <!-- Right Panel - Carousel -->
+    <div class="reviews-right">
+      <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+          <!-- Review Card 1 -->
+          <div class="review-card card-green">
+            <div class="card-flag uae-flag">🇦🇪</div>
+            <p class="review-text">"Amazing service! I sent money to Lahore, and my family received it in less than 10 minutes through Aani . The exchange rate was much better than Western Union, and fees were almost zero."</p>
+            <p class="review-author">— Ahmed Raza, Dubai, UAE → Pakistan</p>
+          </div>
+
+          <!-- Review Card 2 -->
+          <div class="review-card card-white">
+            <div class="card-flag">🇺🇸</div>
+            <p class="review-text">"Very fast and reliable! I've used many transfer apps, but this guys give the best mid-market rate and instant confirmation. My parents received INR within minutes — highly recommend!"</p>
+            <p class="review-author">— Priya Patel, New York, USA → India</p>
+          </div>
+
+          <!-- Review Card 3 -->
+          <div class="review-card card-green">
+            <div class="card-flag">🇨🇦</div>
+            <p class="review-text">"Finally a service that's honest and transparent. The rate matched what Google showed, and there were no hidden fees. I'll definitely keep using this for my monthly remittances."</p>
+            <p class="review-author">— Pradeep Kumar, Toronto, Canada → Pakistan</p>
+          </div>
+
+          <!-- Review Card 4 -->
+          <div class="review-card card-white">
+            <div class="card-flag">🇬🇧</div>
+            <p class="review-text">"Perfect experience! Quick, secure, and much cheaper than Wise or Remitly. Love how I can see the exact live rate before sending.I sent money through Faster Payments and the money reached my Indian bank account in under 15 minutes."</p>
+            <p class="review-author">— Ananya Sharma, London, UK → India</p>
+          </div>
+
+          <!-- Review Card 5 -->
+          <div class="review-card card-green">
+            <div class="card-flag">🇲🇾</div>
+            <p class="review-text">"Very smooth transfer process. I sent funds to Karachi and they arrived almost instantly. Low fees, great rates, and super friendly support — 5 stars!"</p>
+            <p class="review-author">— Rizwan Khan, Kuala Lumpur, Malaysia → Pakistan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+:root {
+  --reviews-green: #0C5D3B;
+  --reviews-light-green: #1a6b4a;
+  --reviews-text-dark: #1A1A1A;
+  --reviews-text-light: #666666;
+}
+
+.reviews-section * {
+  box-sizing: border-box;
+}
+
+.reviews-section {
+  background: var(--reviews-green);
+  padding: 60px 20px;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.reviews-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.reviews-left {
+  flex: 0 0 35%;
+  color: white;
+}
+
+.reviews-title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.02em;
+}
+
+.reviews-description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 0 32px 0;
+  opacity: 0.9;
+}
+
+.reviews-nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.nav-arrow {
+  width: 48px;
+  height: 48px;
+  border: 2px solid white;
+  background: transparent;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+  background: white;
+  color: var(--reviews-green);
+}
+
+.reviews-right {
+  flex: 1;
+  position: relative;
+}
+
+.carousel-container {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 20px;
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel-track:active {
+  cursor: grabbing;
+}
+
+.review-card {
+  flex: 0 0 360px;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-green {
+  background: var(--reviews-light-green);
+  color: white;
+}
+
+.card-white {
+  background: white;
+  color: var(--reviews-text-dark);
+}
+
+.card-flag {
+  width: 120px;
+  height: 80px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  margin: 0 auto 24px auto;
+}
+
+.review-text {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  flex: 1;
+}
+
+.review-author {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1200px) {
+  .reviews-container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .reviews-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 16px;
+  }
+  
+  .reviews-left {
+    flex: none;
+    text-align: center;
+  }
+  
+  .reviews-title {
+    font-size: 32px;
+  }
+  
+  .reviews-description {
+    font-size: 14px;
+  }
+  
+  .review-card {
+    flex: 0 0 320px;
+    min-height: 280px;
+  }
+  
+  .card-flag {
+    width: 100px;
+    height: 70px;
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 40px 16px;
+  }
+  
+  .reviews-container {
+    padding: 0 8px;
+  }
+  
+  .reviews-title {
+    font-size: 24px;
+  }
+  
+  .reviews-description {
+    font-size: 14px;
+  }
+  
+  .review-card {
+    flex: 0 0 280px;
+    padding: 24px;
+    min-height: 260px;
+  }
+  
+  .card-flag {
+    width: 80px;
+    height: 60px;
+    font-size: 40px;
+  }
+  
+  .review-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-section {
+    padding: 30px 12px;
+  }
+  
+  .reviews-title {
+    font-size: 20px;
+  }
+  
+  .reviews-description {
+    font-size: 13px;
+  }
+  
+  .review-card {
+    flex: 0 0 260px;
+    padding: 20px;
+    min-height: 240px;
+  }
+  
+  .card-flag {
+    width: 70px;
+    height: 50px;
+    font-size: 35px;
+  }
+  
+  .review-text {
+    font-size: 13px;
+  }
+  
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+</style>
+
+<script>
+let currentSlide = 0;
+const totalSlides = 5;
+const slideWidth = 380; // 360px card + 20px gap
+
+// Drag functionality variables
+let isDragging = false;
+let startX = 0;
+let currentX = 0;
+let initialTranslate = 0;
+
+function changeSlide(direction) {
+  currentSlide += direction;
+  
+  // Loop back to start/end
+  if (currentSlide >= totalSlides) {
+    currentSlide = 0;
+  } else if (currentSlide < 0) {
+    currentSlide = totalSlides - 1;
+  }
+  
+  const track = document.getElementById('carouselTrack');
+  const translateX = -currentSlide * slideWidth;
+  track.style.transform = `translateX(${translateX}px)`;
+}
+
+function getPositionX(event) {
+  return event.type.includes('mouse') ? event.clientX : event.touches[0].clientX;
+}
+
+function dragStart(event) {
+  if (event.type === 'touchstart') event.preventDefault();
+  isDragging = true;
+  startX = getPositionX(event);
+  const track = document.getElementById('carouselTrack');
+  track.style.transition = 'none';
+  
+  // Pause auto-play when dragging starts
+  stopAutoPlay();
+}
+
+function dragMove(event) {
+  if (!isDragging) return;
+  
+  currentX = getPositionX(event);
+  const track = document.getElementById('carouselTrack');
+  const moveX = currentX - startX;
+  const currentTranslate = -currentSlide * slideWidth + moveX;
+  track.style.transform = `translateX(${currentTranslate}px)`;
+}
+
+function dragEnd(event) {
+  if (!isDragging) return;
+  
+  isDragging = false;
+  const track = document.getElementById('carouselTrack');
+  track.style.transition = 'transform 0.5s ease';
+  
+  const moveX = currentX - startX;
+  const threshold = slideWidth * 0.3; // 30% of slide width to trigger slide change
+  
+  if (Math.abs(moveX) > threshold) {
+    if (moveX > 0) {
+      // Dragged right, go to previous slide
+      changeSlide(-1);
+    } else {
+      // Dragged left, go to next slide
+      changeSlide(1);
+    }
+  } else {
+    // Snap back to current slide
+    const translateX = -currentSlide * slideWidth;
+    track.style.transform = `translateX(${translateX}px)`;
+  }
+  
+  // Resume auto-play after a delay
+  setTimeout(() => {
+    startAutoPlay();
+  }, 1000);
+}
+
+// Auto-play functionality (optional)
+let autoPlayInterval;
+
+function startAutoPlay() {
+  autoPlayInterval = setInterval(() => {
+    if (!isDragging) {
+      changeSlide(1);
+    }
+  }, 5000);
+}
+
+function stopAutoPlay() {
+  clearInterval(autoPlayInterval);
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.getElementById('carouselTrack');
+  const carousel = document.querySelector('.carousel-container');
+  
+  // Mouse events
+  track.addEventListener('mousedown', dragStart);
+  document.addEventListener('mousemove', dragMove);
+  document.addEventListener('mouseup', dragEnd);
+  
+  // Touch events for mobile
+  track.addEventListener('touchstart', dragStart);
+  document.addEventListener('touchmove', dragMove);
+  document.addEventListener('touchend', dragEnd);
+  
+  startAutoPlay();
+  
+  // Pause on hover
+  carousel.addEventListener('mouseenter', stopAutoPlay);
+  carousel.addEventListener('mouseleave', startAutoPlay);
+});
+</script>
